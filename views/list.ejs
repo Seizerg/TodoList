@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>to do list</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
+  <%- include('header') -%>
     <div class="box" id="heading">
-<h1>Today is <%=day %> </h1>
+<h1><%=title %> </h1>
     </div>
   <div class="box">
 
       <%  for (var i=0; i<=item.length; i++){ %>
         <div class="item">
           <input type="checkbox">
-            <p><%=item[i]%></p>
+            <p class="item"><%=item[i]%></p>
             </div>
         <%  }%>
 
@@ -22,12 +15,9 @@
 
       <form class="item" action="/" method="post" >
         <input type="text" name="newItem" value="" placeholder="New item" autocomplete="off">
-        <button type="submit" name="button">+</button>
+        <button type="submit" name="btn" value= <%= title %> >+</button>
 
       </form>
 
   </div>
-
-
-  </body>
-</html>
+  <%- include('footer') -%>
