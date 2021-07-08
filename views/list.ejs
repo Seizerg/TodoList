@@ -3,19 +3,23 @@
 <h1><%=title %> </h1>
     </div>
   <div class="box">
+<!-- for saving one item at the time to our To Do list-->
+<form class="" action="/delete" method="post">
+  <%  items.forEach(x=>{ %>
+    <div class="item">
+      <div class="list-items">
+        <input type="checkbox">
+          <p class="item"><%=x.item%></p>
+      </div>
+        <button class="icons" type="submit" name="button" value="<%=x._id%>" ><i class="bi bi-trash"></i></button>
+        </div>
+    <%  })%>
+</form>
 
-      <%  for (var i=0; i<=item.length; i++){ %>
-        <div class="item">
-          <input type="checkbox">
-            <p class="item"><%=item[i]%></p>
-            </div>
-        <%  }%>
-
-
-
+<!-- for adding new item to our To Do list -->
       <form class="item" action="/" method="post" >
-        <input type="text" name="newItem" value="" placeholder="New item" autocomplete="off">
-        <button type="submit" name="btn" value= <%= title %> >+</button>
+        <input type="text" name="newItem" value="" placeholder="New item" autocomplete="off" required autofocus>
+        <button class="btn" type="submit" name="btn" value= <%= title %> >+</button>
 
       </form>
 
