@@ -6,7 +6,7 @@ const app= express();
 app.set("view engine","ejs");
 app.use(express.static("public"))
 app.use(body.urlencoded({extended:true}));
-mongoose.connect("mongodb://localhost:27017/todoDB",{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify:false})
+mongoose.connect("mongodb+srv://admin-sahil:terminate@cluster0.ego4z.mongodb.net/todoDB",{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify:false})
 const todoSchema= new mongoose.Schema({
   item:String
 });
@@ -29,6 +29,7 @@ const defaultItems= [item1,item2,item3];
 
 app.get("/",function(req,res){
   Todo.find({},function(err,result){
+    if(!err){
     if (result.length===0) {
       Todo.insertMany([item1, item2, item3], function(err){
       (err)? console.log(err):console.log("insertion successful");
@@ -37,6 +38,7 @@ app.get("/",function(req,res){
   }else {
     res.render("list",{title: "Main", items: result })
   }
+}
 })
 
 })
@@ -44,6 +46,7 @@ app.get("/:route",function(req,res){
   const root= _.capitalize(req.params.route);
 
  Routelist.findOne({name:root},function(err,rootlist){
+   if(!err){
    if(rootlist){
 
      res.render("list",{title: rootlist.name, items: rootlist.content })
@@ -55,6 +58,7 @@ app.get("/:route",function(req,res){
      rootRoute.save();
      res.redirect("/"+root);
    }
+ }
  })
 
 })
@@ -70,11 +74,13 @@ app.post("/",function(req,res){
     res.redirect("/");
   }else{
   Routelist.findOne({name:btnvalue},function(err,result){
+    if(!err){
   if(result){
   result.content.push(newitm)
   result.save();
   res.redirect("/"+btnvalue);
   }
+}
 })
 }
 })
