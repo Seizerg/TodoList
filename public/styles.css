@@ -138,3 +138,32 @@ footer {
 
 
 }
+@media(max-width:500px){
+  body{
+    height: 100vh;
+  }
+  .box {
+    max-width: 350px;
+  }
+  p {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 200;
+    color: #00204a;
+  }
+}
+@media(max-width:400px){
+  body{
+    height: 100vh;
+  }
+  .box {
+    max-width: 300px;
+    margin: 30px auto;
+  }
+  p {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 200;
+    color: #00204a;
+  }
+}
