@@ -177,13 +177,13 @@ footer {
     min-height: 10px;
 }
 }
-@media(max-width:310px){
+@media(max-width:320px){
   button.btn {
-    font-size: 17px;
+    font-size: 20px;
     position: relative;
-    right:10px;
+    right:20px;
     min-height: 10px;
-    box-shadow: 1px 1px 0.5px 0.5px grey;
+    box-shadow: 1px 1px 0.9px 0.9px grey;
 }
 button.icons{
   width: 22px;
