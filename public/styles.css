@@ -138,7 +138,7 @@ footer {
 
 
 }
-@media(max-width:500px){
+@media only screen and (max-width:500px){
   body{
     height: 100vh;
   }
@@ -156,7 +156,7 @@ footer {
     width: 30px;
   }
 }
-@media(max-width:400px){
+@media only screen and (max-width:400px){
   body{
     height: 100vh;
   }
@@ -177,7 +177,7 @@ footer {
     min-height: 10px;
 }
 }
-@media(max-width:320px){
+@media only screen and (max-width:320px){
   button.btn {
     font-size: 20px;
     position: relative;
