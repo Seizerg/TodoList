@@ -83,8 +83,8 @@ form.item {
 }
 
 button.btn {
-  min-height: 50px;
-  width: 50px;
+  min-height: 30px;
+  width: 30px;
   border-radius: 50%;
   border-color: transparent;
   background-color: #BB8760;
@@ -172,16 +172,14 @@ footer {
   }
   button.btn {
     font-size: 20px;
-    position: relative;
-    right:4px;
+    transform: translateX(-4px);
     min-height: 10px;
 }
 }
 @media only screen and (max-width:320px){
   button.btn {
     font-size: 20px;
-    position: relative;
-    right:20px;
+    transform: translateX(-20px);
     min-height: 10px;
     box-shadow: 1px 1px 0.9px 0.9px grey;
 }
